@@ -10,10 +10,10 @@ import tornadofx.*
 class MainView : View("Probando uno dos") {
     var extensiones  = mutableListOf<String>()
     override val root = hbox {
-        //extensiones.add("*.txt")
-        //extensiones.add("*.data")
-       // var dir = chooseFile("Escoje el dataset de entrenamiento", arrayOf<FileChooser.ExtensionFilter>(FileChooser.ExtensionFilter("Text Files", extensiones)))
-        var seleccion = Tokenizador("C:\\Users\\geraa\\IdeaProjects\\ClasificadorKNN\\src\\recursos\\iris.data")
+        extensiones.add("*.txt")
+        extensiones.add("*.data")
+       var dir = chooseFile("Escoje el dataset de entrenamiento", arrayOf<FileChooser.ExtensionFilter>(FileChooser.ExtensionFilter("Text Files", extensiones)))
+        var seleccion = Tokenizador(dir[0].path)
         var ejercicio = cMeans(seleccion,3,0.34)
         /*var clad = ClasificadorDistancia(seleccion)
         var intencion = ClasificadorKNN(seleccion)
